@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rh56-vision-gesture-control"
+version = "0.1.0"
+description = "Cross-platform MediaPipe gesture control for Inspire Robots RH56/RH56DFTP"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = {file = "LICENSE"}
+authors = [{name = "RH56 Vision Gesture Control contributors"}]
+dependencies = [
+  "pyserial>=3.5,<4",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+
+[project.optional-dependencies]
+vision = [
+  "mediapipe>=0.10.14,<0.11",
+  "opencv-contrib-python>=4.8,<6",
+]
+dev = ["pytest>=8,<9"]
+
+[tool.setuptools]
+py-modules = ["gesture_config", "hand_console", "hand_driver", "vision_gesture_control"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

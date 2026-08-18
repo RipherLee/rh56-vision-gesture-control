@@ -1,0 +1,4 @@
+mediapipe>=0.10.14,<0.11
+# MediaPipe 自身使用 contrib 发行版；只装一个 OpenCV 包，避免 cv2 文件互相覆盖。
+opencv-contrib-python>=4.8,<6
+pyserial>=3.5,<4
